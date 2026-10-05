@@ -1,0 +1,251 @@
+* { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+body {
+    font-family: "Space Mono", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: hsl(185, 41%, 84%);
+}
+.container {
+    display: flex;
+    gap: 100px;
+    padding: 0 30px;
+    max-width: 1000px;
+    width: 100%;
+}
+.enter-bill, 
+.total-bill {
+    flex: 1;
+}
+.logo {
+    padding-bottom: 50px;
+}
+.main {
+    background-color: hsl(0, 100%, 100%);
+    border-radius: 20px;
+}
+.enter-bill {
+    max-width: 450px;
+    padding: 30px 0;
+}
+.bill {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.bill p {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+}
+.bill input,
+.num-person input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: hsl(189, 41%, 97%);
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    text-align: right;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+.bill input {
+    background-image: url("../img/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 18px center; 
+}
+.num-person input {
+    background-image: url("../img/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+}
+.bill input::placeholder,
+.num-person input::placeholder {
+    color: hsl(184, 14%, 56%);
+}
+
+.bill input:focus,
+.num-person input:focus {
+    border-color: hsl(172, 67%, 45%);
+}
+.tips {
+    padding: 30px 0 ;
+}
+.tips p {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+}
+.tips-pre {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding-top: 10px;
+}
+.tips-pre button,
+.tip-custom {
+    width: 100%;
+    height: 48px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: inherit;
+}
+.tips-pre button {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.tips-pre button.selected {
+    background-color: hsl(173, 61%, 77%);
+    color: hsl(183, 100%, 15%);
+}
+.tips-pre button:hover {
+    background-color: hsl(173, 61%, 77%);
+    color: hsl(183, 100%, 15%);
+}
+.tip-custom {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    text-align: right; 
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    height: 48px;
+}
+.tip-custom::placeholder {
+    color: hsl(186, 14%, 43%);
+    text-align: center;
+}
+.tip-custom:focus {
+    border-color: hsl(172, 67%, 45%);
+    text-align: right; 
+}
+.num-person p{
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+}
+.check-num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.num-person .error {
+    color: hsl(0, 100%, 67%);
+    font-size: 12px;
+    font-weight: 700;
+    display: none;
+}
+.total-bill {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.calc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+.tip-amount,
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-tip p,
+.text-total p {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+.text-tip span,
+.text-total span {
+    font-size: 12px;
+    font-weight: 700;
+    color: hsl(184, 14%, 56%);
+}
+.tip-amount h2,
+.total h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: hsl(172, 67%, 45%);
+}
+.reset-btn {
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 70px;
+    padding: 15px 0;
+}
+.reset-btn:hover {
+    background-color: hsl(173, 61%, 77%);
+    color: hsl(183, 100%, 15%);
+}
+
+/* Media Query للشاشات الصغيرة (الموبايل) */
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+    .logo {
+        padding-bottom: 40px;
+    }
+    .container {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 24px;
+        border-radius: 25px 25px 0 0; 
+        max-width: 100%;
+    }
+    .enter-bill {
+        max-width: 100%;
+        padding: 0;
+    }
+    .tips-pre {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .total-bill {
+        padding: 32px 24px;
+        gap: 32px;
+    }
+    .calc-tips h2,
+    .calc-total h2 {
+        font-size: 32px; 
+    }
+    .reset-btn {
+        margin-top: 8px;
+    }
+}
